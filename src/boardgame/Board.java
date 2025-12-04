@@ -27,4 +27,14 @@ public class Board {
     public void setRows(int rows) {
         this.rows = rows;
     }
+    //metodo piece que vai retornar uma peça recebendo linha e coluna e uma sobrecarga dele que recebe a position
+
+    public Piece piece(int row, int column) {
+        return pieces[row][column];
+    }
+    //retorna a peça peka posição
+    public Piece piece(Position position) {
+        return pieces[position.getRow()][position.getColumn()];
+    }
+
 }
