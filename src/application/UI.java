@@ -35,9 +35,7 @@ public class UI {
         int row = Integer.parseInt(s.substring(1));
         return new ChessPosition(column, row);
     }
-    catch(RuntimeException e) {
-        throw new InputMismatchException("Error reading Chess position");
-    }
+
 
     public static void printBoard(ChessPiece[][] pieces) {
         for (int i = 0; i < pieces.length; i++) {
@@ -47,13 +45,17 @@ public class UI {
             }
             System.out.println(); //quebra de linha na matriz ex: linha 8 para 7
         }
-        System.out.println("  a b c d e f g h"); // espaço no começo das colunas no terminal
+        System.out.println("  a   b   c   d   e  f  g  h"); // espaço no começo das colunas no terminal
+    }
+
+    private  static String getColorCode(ChessPiece piece) {
+        return (piece.getColor() == Color.WHITE) ? ANSI_WHITE : ANSI_YELLOW;
     }
 
     //imprimir uma peça e se for = nulo nao tinha peça nessa posiççao tabuleiro
     private static void printPiece(ChessPiece piece) {
         if (piece == null) {
-            System.out.print("-");
+            System.out.print("   ");
         }
         //imprimir a peça de cada time com uma cor
         else {
@@ -63,6 +65,6 @@ public class UI {
                 System.out.print(ANSI_YELLOW + piece + ANSI_RESET);
             }
         }
-        System.out.print(" ");
+        System.out.print("  ");
     }
 }

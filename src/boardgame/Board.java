@@ -70,6 +70,7 @@ public class Board {
     public boolean positionExists(Position position) {
         return positionExists(position.getRow(), position.getColumn());
     }
+
     //caso diferente de nulo significa que tem uma peça alhi
     //antes de testar o thereIsAPiece ele ja testa se a posição existe se nao ele para
     public boolean thereIsAPiece(Position position) {
