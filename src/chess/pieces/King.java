@@ -16,7 +16,7 @@ public class King extends ChessPiece {
 
     @Override
     public boolean [][] possibleMoves () {
-        //matriz temporaria retorna tudo falso,como se estivesse preso a peca
-        return new boolean[getBoard().getRows()][getBoard().getColumns()];
+        boolean [][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()]; //matriz temporaria retorna tudo falso,como se estivesse preso a peca
+        return mat;
     }
 }
