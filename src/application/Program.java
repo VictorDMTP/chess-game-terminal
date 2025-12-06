@@ -28,7 +28,7 @@ public class Program {
 
                 boolean[][] possibleMoves = chessMatch.possibleMoves(source);
                 UI.clearScreen();
-                UI.printBoard(chessMatch.getPieces(),possibleMoves); //imprime o tabuleiro de novo so que com as posicoes possiveis de se mover coloridas
+                UI.printBoard(chessMatch.getPieces(),possibleMoves); //Sobrecargar ,imprime o tabuleiro de novo so que com as posicoes possiveis de se mover coloridas
                 System.out.println();
                 System.out.print("Destino: ");
                 ChessPosition target = UI.readChessPosition(sc);
