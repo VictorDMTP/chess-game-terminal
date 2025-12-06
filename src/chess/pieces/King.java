@@ -13,4 +13,10 @@ public class King extends ChessPiece {
     public String toString() {
         return "♔";
     }
+
+    @Override
+    public boolean [][] possibleMoves () {
+        //matriz temporaria retorna tudo falso,como se estivesse preso a peca
+        return new boolean[getBoard().getRows()][getBoard().getColumns()];
+    }
 }

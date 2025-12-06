@@ -13,4 +13,6 @@ public class Horse extends ChessPiece {
     public String toString() {
         return "♞";
     }
+
+
 }
