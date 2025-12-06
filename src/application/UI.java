@@ -50,11 +50,21 @@ public class UI {
         for (int i = 0; i < pieces.length; i++) {
             System.out.print((8 - i) + " ");
             for (int j = 0; j < pieces.length; j++) {
-                printPiece(pieces[i][j]);
+                printPiece(pieces[i][j], false); //esse false e pra que nenhuma peca tenha o fundo colorido sem considerar movimentos possiveis
             }
             System.out.println(); //quebra de linha na matriz ex: linha 8 para 7
         }
         System.out.println("  a   b   c   d   e  f  g  h"); // espaço no começo das colunas no terminal
+    }
+
+    public static void printBoard(ChessPiece[][] pieces, boolean[][] possibleMoves) {
+        for (int i = 0; i < pieces.length; i++) {
+            System.out.print((8 - i) + " ");
+            for (int j = 0; j < pieces.length; j++) {
+                printPiece(pieces[i][j], possibleMoves[i][j]);
+            }
+            System.out.println(); //quebra de linha na matriz ex: linha 8 para 7
+        }
     }
 
     private static String getColorCode(ChessPiece piece) {
@@ -62,9 +72,12 @@ public class UI {
     }
 
     //imprimir uma peça e se for = nulo nao tinha peça nessa posiççao tabuleiro
-    private static void printPiece(ChessPiece piece) {
+    private static void printPiece(ChessPiece piece, boolean background) {
+        if (background) {
+            System.out.print(ANSI_BLUE_BACKGROUND);
+        }
         if (piece == null) {
-            System.out.print(" -");
+            System.out.print(" -" + ANSI_RESET);
         }
         //imprimir a peça de cada time com uma cor
         else {
