@@ -21,7 +21,7 @@ public class Program {
 
         //catch vai ser pra caso ocorra uma excessao no bloco try vai imprimitr a msng e esperar que o user aperte enter
 
-        while (true) {
+        while (!chessMatch.getCheckMate()) {
             try {
                 UI.clearScreen();
                 UI.printMatch(chessMatch,  captured);
@@ -50,5 +50,7 @@ public class Program {
                 sc.nextLine();
             }
         }
+        UI.clearScreen();
+        UI.printMatch(chessMatch,  captured);  //imprime a partida finalizada
     }
 }
