@@ -75,7 +75,7 @@ public class Board {
     //antes de testar o thereIsAPiece ele ja testa se a posição existe se nao ele para
     public boolean thereIsAPiece(Position position) {
         if (!positionExists(position)) {
-            throw new BoardException("postion not on the board");
+            throw new BoardException("position not on the board");
         }
        return piece(position) != null;
     }
